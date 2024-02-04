@@ -1,7 +1,7 @@
 import axios from "axios";
 import queryString from "query-string";
 
-const baseURL = "http://localhost:8080/";
+const baseURL = "https://mern-movie-api-sigma.vercel.app/api/v1/";
 
 const publicClient = axios.create({
   baseURL,
