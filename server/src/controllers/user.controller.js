@@ -31,7 +31,7 @@ const signup = async (req, res) => {
     // Generate a JWT token for the new user
     const token = jsonwebtoken.sign(
       { data: user.id },
-      process.env.TOKEN_SECRET,
+      process.env.TOKEN_SECRET_KEY,
       { expiresIn: "24h" }
     );
 
@@ -44,6 +44,8 @@ const signup = async (req, res) => {
   } catch {
     // Handle unexpected errors with a generic error response
     responseHandler.error(res);
+    // Inside the catch block of each controller function
+
   }
 };
 
@@ -72,7 +74,7 @@ const signin = async (req, res) => {
     // Generate a JWT token for the authenticated user
     const token = jsonwebtoken.sign(
       { data: user.id },
-      process.env.TOKEN_SECRET,
+      process.env.TOKEN_SECRET_KEY,
       { expiresIn: "24h" }
     );
 

@@ -15,7 +15,9 @@ const responseWithData = (res, statusCode, data) => res.status(statusCode).json(
 const error = (res) => responseWithData(res, 500, {
   status: 500,
   message: "Oops! Something went wrong!"
+  
 });
+
 
 /**
  * Function to send a bad request response with a 400 status code and a specified message.

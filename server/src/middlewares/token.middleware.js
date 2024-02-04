@@ -18,7 +18,7 @@ const tokenDecode = (req) => {
       const token = bearerHeader.split(" ")[1];
 
       // Verify and decode the token using the secret key
-      return jsonwebtoken.verify(token, process.env.TOKEN_SECRET);
+      return jsonwebtoken.verify(token, process.env.TOKEN_SECRET_KEY);
     }
 
     return false;
